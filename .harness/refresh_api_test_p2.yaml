@@ -28,4 +28,5 @@ pipeline:
                           spec:
                             script: echo hello2
                         delegateSelectors: <+input>
+                      timeout: <+input>
         tags: {}
