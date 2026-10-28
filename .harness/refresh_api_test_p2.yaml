@@ -1,0 +1,32 @@
+pipeline:
+  name: refresh_api_test_p2
+  identifier: refresh_api_test_p2
+  projectIdentifier: labsproject
+  orgIdentifier: abhilabs
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: t1
+                  identifier: t1
+                  template:
+                    templateRef: refresh_api_test_step
+                    versionLabel: v1
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        onDelegate: <+input>
+                        source:
+                          type: Inline
+                          spec:
+                            script: echo hello2
+                        delegateSelectors: <+input>
+                      timeout: <+input>
+        tags: {}
